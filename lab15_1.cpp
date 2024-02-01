@@ -21,4 +21,5 @@ int main()
 	*static_cast<int*>(zPtr) = 7;
 	cout << a <<" "<< b <<" "<< c <<" "<< xPtr <<" "<<&yPtr<<" "<<static_cast<int*>(zPtr)<<"\n";
 	return 0;
+	
 }
