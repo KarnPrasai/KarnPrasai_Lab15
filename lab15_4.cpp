@@ -3,7 +3,7 @@
 #include <ctime>
 using namespace std;
 
-void shuffle(int &,int &,int &,int &);
+void shuffle(int *,int *,int *,int *);
 
 int main(){
 	int a = 50, b = 100, c = 500, d = 1000;
@@ -11,16 +11,16 @@ int main(){
 	srand(time(0));	
 	
 	for(int i = 0;i < 10;i++){
-	    shuffle(a,b,c,d);
+	    shuffle(&a,&b,&c,&d);
 	    cout << a << " " << b << " " << c << " " << d << "\n";
 	}
 	
 	return 0;
 }
 
-void shuffle(int &a,int &b,int &c,int &d)
+void shuffle(int *a,int *b,int *c,int *d)
 {
-	int Num[] = {a,b,c,d};
+	int Num[] = {*a,*b,*c,*d};
 	for(int i = 3;i>0;i--)
 	{
 		int j = rand() % (i+1);
@@ -28,8 +28,8 @@ void shuffle(int &a,int &b,int &c,int &d)
 		Num[i] = Num[j];
 		Num[j] = temp;
 	}
-	a = Num[0];
-	b = Num[1];
-	c = Num[2];
-	d = Num[3];
+	*a = Num[0];
+	*b = Num[1];
+	*c = Num[2];
+	*d = Num[3];
 }
